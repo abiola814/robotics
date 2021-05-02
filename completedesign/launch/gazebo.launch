@@ -1,0 +1,27 @@
+<launch>
+  <!--arg needed-->
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="pause" default="false"/>
+  <arg name="debug" default="true"/>
+  <!-- intializing gazebo ros for gazebo empty world-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+     <arg name="gui" value="$(arg gui)"/>
+     <arg name="debug" value="$(arg debug)"/>
+     <!--arg name="pause" value="$(arg pause)"/-->
+     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+     <arg name="headless" value="$(arg headless)"/>
+ </include>
+
+ <!--param for robot describtion-->
+ <param name='robot_description' command="$(find completedesign)/urdf/completedesign.urdf"/>
+ <!--joint state publisher and robot state publisher-->
+ <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publsher"/>
+ <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" output="screen">
+   <param name="publish_frequncy" type="double" value="50.0"/>
+</node>
+ <!--node for description of gazebo ros and robot_description-->
+ <node name="urdf_spawner" pkg="gazebo_ros" output="screen" respawn="false" type="spawn_model" 
+       arg="-uedf -model completedesign -param robot_description"/>
+</launch>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.4.4-24-g24328f6  Build Version: 1.5.7084.36479
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="completedesign">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.204068996857784 0.196674687276124 0.269536522196903"
+        rpy="0 0 0" />
+      <mass
+        value="11.1812590354434" />
+      <inertia
+        ixx="0.395770367096526"
+        ixy="0.00130010297354412"
+        ixz="-4.42738970032154E-05"
+        iyy="0.271389565592583"
+        iyz="-0.00731814430780011"
+        izz="0.420095208167645" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://completedesign/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://completedesign/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel1">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.512281743012307" />
+      <inertia
+        ixx="0.00170829050275458"
+        ixy="-6.58393295286078E-20"
+        ixz="-1.05343668637244E-19"
+        iyy="0.000890721591291776"
+        iyz="0"
+        izz="0.000890721591291776" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.01 -0.25 -0.23"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://completedesign/meshes/wheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.01 -0.25 -0.23"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://completedesign/meshes/wheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_wheel1"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel1" />
+    <axis
+      xyz="1 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+    <link
+    name="wheel2">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.512281743012307" />
+      <inertia
+        ixx="0.00170829050275458"
+        ixy="-6.58393295286078E-20"
+        ixz="-1.05343668637244E-19"
+        iyy="0.000890721591291776"
+        iyz="0"
+        izz="0.000890721591291776" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 -0.25 -0.23"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://completedesign/meshes/wheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 -0.25 -0.23"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://completedesign/meshes/wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_to_wheel2"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel2" />
+    <axis
+      xyz="1 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+
+</robot>
