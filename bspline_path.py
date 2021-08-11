@@ -1,8 +1,8 @@
 """
 
-Path Planner with B-Spline
+Path Planner with B-Spline for Bbot experiment 
 
-author: Atsushi Sakai (@Atsushi_twi)
+author: oladunjoye abiola
 
 """
 
